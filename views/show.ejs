@@ -53,6 +53,7 @@
                 
                
                 <br/>
+                <% if (userReq) { %>
                 <div class="review-div">
                     <form method="post" action="/airBNB/<%= listedData._id %>/review">
                         <label for="comment-1">Review This!</label>
@@ -64,6 +65,7 @@
                         <button>Submit</button> 
                     </form>
                 </div>
+                <% } %>
             </div>
         </ul>
     </div>
