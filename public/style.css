@@ -6,29 +6,75 @@ html{
    padding: 0;
    margin: 0;
 }
-.nav{
+/* .nav{
      width: 100% !important;
     background-color: rgb(105, 102, 102)!important;
-}
-.nav-container{
+} */
+/* .nav-container{
     width: 100%!important;
     height: -10%!important;
-}
-.ul-nav{
+} */
+/* .ul-nav{
     width:100%!important;
     display: flex!important;
     justify-content: flex-start!important;
-}
-.ul-nav li{
+} */
+/* .ul-nav li{
     margin-right: 50px!important;
     list-style-type: none!important;
     font-size: 1.5vmax!important;
     color:wheat !important;
-}
-.title{
+} */
+/* .title{
     color: wheat;
     font-size: 1.8vmax !important;
+} */
+
+
+body{
+   margin: 0;
+   padding: 0;
 }
+.main-nav{
+    width: 100%;
+    height: 100%;
+    background-color:lightseagreen;
+    position: relative;
+}
+.nav-logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3vw;
+}
+.nav-element{
+    display: flex;
+     gap:4vw;
+}
+.nav-logo h3{
+    font-size: 2vw;
+}
+.nav-logo h3 a{
+    text-decoration: none;
+    color: white;
+}
+.nav-element h5{
+    font-size:1.5vw;
+}
+.nav-element h5 a{
+    text-decoration: none;
+    color: white;
+}
+
+@media  (max-width:600px) {
+    .nav-logo h3{
+    font-size: 7vw;
+}
+.nav-element h5{
+    font-size:4vw;
+}
+}
+
 .list-div{
     display: flex!important;
     justify-content:center!important;
@@ -39,9 +85,9 @@ html{
     flex-flow: row wrap!important;
     justify-content: center!important;
 }
-.list-container{
+/* .list-container{
     width: %!important;
-}
+} */
 /* @media only screen and (max-width:500px) {
     .list-container{
         width:100%;
