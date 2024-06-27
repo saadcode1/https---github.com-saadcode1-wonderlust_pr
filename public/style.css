@@ -95,12 +95,12 @@ body{
     display: flex!important;
     justify-content:center!important;
 } */
-/* .list-ul{
-   
+.list-ul{
     display: flex!important;
     flex-flow: row wrap!important;
     justify-content: center!important;
-} */
+    gap:8px;
+}
 /* .list-container{
     width: %!important;
 } */
