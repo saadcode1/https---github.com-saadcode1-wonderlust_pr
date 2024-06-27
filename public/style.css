@@ -90,17 +90,17 @@ body{
     font-size:4vw;
 }
 }
-
+/* 
 .list-div{
     display: flex!important;
     justify-content:center!important;
-}
-.list-ul{
+} */
+/* .list-ul{
    
     display: flex!important;
     flex-flow: row wrap!important;
     justify-content: center!important;
-}
+} */
 /* .list-container{
     width: %!important;
 } */
@@ -122,9 +122,9 @@ body{
     }
     
 } */
-.image-container{
+/* .image-container{
     margin: 5px;
-}
+} */
 .form-div{
     width: 100%;
     display: grid;
@@ -157,7 +157,7 @@ body{
     width: 100%;
     height: 200%;
 } */
-
+/* 
 @media only screen and (max-width:412px){
     .show{
         height: 100vh;
@@ -166,10 +166,110 @@ body{
         align-items: center;
     }
     
-}
+} */
 .back{
     background-color: red;
 }
 .d-none{
     display: none !important;
+}
+
+/* changes in show.ejs for making responsiveness */
+#image{
+    width: 50vw;
+    height: 40vw;
+}
+.main-div{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+.author-div{
+    width: 50vw;
+  
+}
+.author-div h3{
+   font-size: 2vw;
+}
+.info-div{
+    width: 50vw;
+}
+.info-div h4{
+    font-size: 1.5vw;
+}
+.review-div{
+    width: 50vw;
+}
+.review-div h2{
+    font-size: 3vw;
+}
+.review-div h5{
+    font-size: 1.5vw;
+}
+textarea{
+    width: 50vw;
+}
+hr{
+    width: 50vw;
+}
+.input-div{
+    width: 50vw;
+}
+.input-div h3{
+    font-size: 1.5vw;
+}
+#btn{
+    width: 10vw;
+    font-size: 1.5vw;
+}
+#range{
+    width: 50vw;
+}
+.dlt-btn{
+    width: 50vw;
+}
+.activity-btn{
+    width: 10vw;
+    font-size: 1.5vw; 
+}
+
+@media (max-width:450px) {
+    #image{
+    width: 80vw;
+    height: 70vw;
+}
+.author-div h3{
+   font-size: 5vw;
+}
+.info-div h4{
+    font-size: 3.5vw;
+    text-align: justify;
+}
+.review-div h2{
+    font-size: 5vw;
+}
+.review-div h5{
+    font-size: 4vw;
+}
+textarea{
+    width: 70vw;
+}
+hr{
+    width: 80vw;
+}
+.input-div h3{
+    font-size: 3vw;
+}
+#btn{
+    width: 20vw;
+    font-size: 3vw;
+}
+#range{
+    width: 70vw;
+}
+.activity-btn{
+    width: 20vw;
+    font-size: 3vw;
+}
 }

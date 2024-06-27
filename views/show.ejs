@@ -1,76 +1,50 @@
 <% layout('boilerplate') -%>
-<style>
-    img{
-        width:50%;
-        height:50%;
-        margin: 5px;
-        border-radius: 10px;
-        }
-</style>
-<div class="list-div show">
-    <div class="list-container">
-        <ul class="list-ul">
-            <div class="image-container">
-                <img class="offset-3" src="<%= listedData.image.url %>" alt="img"/>
-                <div class="row col-6 offset-3">
-                    <div class="">
-                        <p>Username: <%= listedData.owner.username %></p>
-                        <p>Email: <%= listedData.owner.email %></p>
-                        <hr/>
-                    
-                <p style="font-weight: bold;font-size: 1.2em;">Title:<b><%= listedData.title %></b></p>
-                <p style="font-weight: bold;font-size: 1.2em;">Description:<b><%= listedData.description %></b></p>
-                <p style="font-weight: bold;font-size: 1.2em;">Location:<b><%= listedData.location %></b></p>
-                <p style="font-weight: bold;font-size: 1.2em;">Country:<b><%= listedData.country %></b></p>
-                <p>&#8377;<b><%= listedData.price %></b></p>
-                <br/>
-            </div>
-            </div>
-            <hr/>
-                <div class="row col-6 offset-3">
-                <div class="added-review">
-                    <% for(review of listedData.review){ %>
-                        <h5>Author:<%=review.author.username%></h5>
-                        <p>Comment: <%= review.comment %></p>
-                        <p>Rating: <%= review.rating %> / 5</p>
-                        <hr/>
-<% } %>
-                </div>
-          
-                      
-                
-                <% if (userReq) { %>
-                  
-                        <% if (userReq.username === listedData.owner.username) { %>
-                            <div class="btn-div">
-                                <a href="/airBNB/<%= listedData._id %>/edit"><button>Edit</button></a>
-                                <a href="/airBNB/<%= listedData._id %>/delete"><button>Delete</button></a>
-                            </div>
-                        <% } %>
-                    <% } %>
+<div class="main-div">
+    <div class="sec-div">
+        <image id="image" src="<%= listedData.image.url %>" alt="img"/>
+        <div class="author-div">
+            <h3><b>Name:</b><%= listedData.owner.username %></h3>
+            <h3><b>Email:</b><%= listedData.owner.email %></h3>
+        </div>
+        <hr/>
+        <div class="info-div">
+            <h4><b>Title:</b><%= listedData.title %></h3>
+            <h4><b>Description:</b><%= listedData.description %></h3>
+            <h4><b>Location:</b><%= listedData.location %></h3>
+            <h4><b>Country:</b><%= listedData.country %></h3>
+            <h4><b>Price:</b>&#8377;<%= listedData.price %></h3>
+        </div>
+        <hr/>
+        <% if (userReq) { %>
               
-                
-                
-               
-                <br/>
-                <% if (userReq) { %>
-                <div class="review-div">
-                    <form method="post" action="/airBNB/<%= listedData._id %>/review">
-                        <label for="comment-1">Review This!</label>
-                        <textarea name="review[comment]" id="comment-1" rows="5" cols="95"></textarea>
-                        <br/>
-                        <label for="rating-1">Rating</label>
-                        <input name="review[rating]" style="width:100%;" type="range" id="rating-1" min="0" max="5" value="5" step="1"/>
-                        <br/>
-                        <button>Submit</button> 
-                    </form>
+            <% if (userReq.username === listedData.owner.username) { %>
+                <div class="dlt-btn">
+                    <a href="/airBNB/<%= listedData._id %>/edit"><button class="activity-btn">Edit</button></a>
+                    <a href="/airBNB/<%= listedData._id %>/delete"><button  class="activity-btn">Delete</button></a>
                 </div>
-                <% } %>
-            </div>
-        </ul>
+            <% } %>
+        <% } %>
+        <hr/>
+        <div class="input-div">
+            <% if (userReq) { %>
+            <form method="post" action="/airBNB/<%= listedData._id %>/review">
+            <h3>Comment Down!</h3>
+            <textarea name="review[comment]" rows="5" cols="50" placeholder="Type Comment"></textarea>
+            <input name="review[rating]" id="range" type="range" id="rating-1" min="0" max="5" value="5" step="1"/>
+            <br/>
+            <button id="btn">Submit</button>
+        </form>
+        <% } %>
+        </div>
+       <hr/>
+       <div class="review-div">
+        <h2>Related Reviews!</h2>
+        <% for(review of listedData.review){ %>
+        <h5><b>Author:</b><%=review.author.username%></h5>
+        <h5><b>Comment:</b><%= review.comment %></h5>
+        <h5><b>Rating:</b><%= review.rating %> / 5</h5>
+        &nbsp;&nbsp;  
+        <% } %>
     </div>
-</div>
-<br/>
-<br/>
-<br/>
-<br/>
+    </div>
+  </div>
