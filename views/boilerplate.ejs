@@ -24,7 +24,8 @@
         </div>
     </div>
     <%-include("./flash.ejs")%>
-    
+    <form action="/search" method="post" id="form"> <input type="text" id="search-input" name="searchQ" placeholder="Search Destination"/>
+        <button id="search-btn" >Search</button></form>
     <%- body -%>
     <!-- Footer -->
     

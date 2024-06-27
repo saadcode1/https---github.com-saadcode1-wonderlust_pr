@@ -3,8 +3,37 @@
     #gst{
         display: none;
     }
+    .taxes-cl{
+      width: 8vw;
+      position:absolute;
+      display: flex;
+      margin-top: -10px;
+    }
+    #taxes{
+      border-radius: 10px;
+      font-size: 1vw;
+      width: 50vw;
+      height: 4vh;
+      border: none;
+      margin-top: -47px;
+      margin-left: -100px;
+    }
+    #taxes:hover{
+      border: 1px solid grey;
+    }
+    @media (max-width:600px) {
+      #taxes{
+      border-radius: 10px;
+      font-size: 3vw;
+      width: 20vw;
+      border: none;
+      margin-top: -36px;
+      margin-left: -50px;
+      transform: scale(0.8);
+    }
+    }
 </style>
-<div class="offset-10 mt-1">
+<div class="offset-10 mt-1 taxes-cl">
     <button id="taxes">Show Taxes</button>
   </div>
 <div class="list-div">

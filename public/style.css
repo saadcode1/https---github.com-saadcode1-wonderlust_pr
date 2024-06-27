@@ -6,6 +6,22 @@ html{
    padding: 0;
    margin: 0;
 }
+#search-btn{
+ width: 25vw;
+ border-radius: 10px;
+ border: 1px solid grey;
+}
+#form{
+    width:50vw;
+    display: flex;
+    gap:5px;
+    padding: 1vw 1vw;
+}
+#search-input{
+    width: 50vw;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
 /* .nav{
      width: 100% !important;
     background-color: rgb(105, 102, 102)!important;
@@ -56,14 +72,14 @@ body{
 }
 .nav-logo h3 a{
     text-decoration: none;
-    color: rgb(244, 240, 240);
+    color: rgb(251, 252, 253);
 }
 .nav-element h5{
     font-size:1.5vw;
 }
 .nav-element h5 a{
     text-decoration: none;
-    color: white;
+    color: rgb(249, 250, 251);
 }
 
 @media  (max-width:600px) {
@@ -136,8 +152,7 @@ body{
     color: rgb(62, 60, 56);
     border-bottom: 1px solid rgb(20, 19, 19);
 }
-.form-container  label{  
-}
+
 /* .btn{
     width: 100%;
     height: 200%;
