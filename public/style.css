@@ -56,7 +56,7 @@ body{
 }
 .nav-logo h3 a{
     text-decoration: none;
-    color: white;
+    color: rgb(244, 240, 240);
 }
 .nav-element h5{
     font-size:1.5vw;
