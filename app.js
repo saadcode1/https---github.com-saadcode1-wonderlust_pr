@@ -54,6 +54,7 @@ async function main() {
 // route object requiring
 const route=require("./routers/listings.js");
 const userRouter=require("./routers/user.js");
+
 const { regex } = require('./joi.js');
 // listing models
 const Listing =mongoose.model("Listing",listingSchema);
@@ -118,7 +119,7 @@ app.post('/search', async (req, res) => {
     }
 
   });
-// Ensure the schema hook is defined before compiling the model
+// post route for deleting riview form listings
 listingSchema.post('findOneAndDelete', async (data) => {
     if (data.review.length) {
         let res = await Review.deleteMany({ _id: { $in: data.review } });
@@ -126,18 +127,33 @@ listingSchema.post('findOneAndDelete', async (data) => {
         console.log(res);
     }
 });
+
 // maiin rout
 app.get("/",(req, res)=>{
 
     res.redirect("/airBNB");
     })
+
 // usng router object
 app.use('/airBNB', route);
 app.use('/', userRouter);
 
 
+
+// error handling middleWares
+app.use((err, req, res, next) => {
+    if (err) {
+      console.log("2nd running middleware")
+      const { status = 500, message = "Something Went Wrong" } = err;
+      res.status(status).render("error.ejs",{message});
+    } else {
+      next(err); // If no error, continue to the next middleware
+    }
+  });
+
+
 // reviw route
-app.post('/airBNB/:id/review',isLoggedIn, wrapAsync(async (req, res, next) => {
+app.post("/airBNB/:id/review",isLoggedIn, wrapAsync(async (req, res, next) => {
     let { id } = req.params;
     console.log(id)
     console.log(req.body.review);
@@ -159,16 +175,6 @@ app.post('/airBNB/:id/review',isLoggedIn, wrapAsync(async (req, res, next) => {
 }));
 
 
-// error handling middleWares
-app.use((err, req, res, next) => {
-    if (err) {
-      console.log("2nd running middleware")
-      const { status = 500, message = "Something Went Wrong" } = err;
-      res.status(status).render("error.ejs",{message});
-    } else {
-      next(err); // If no error, continue to the next middleware
-    }
-  });
 
 // Start the server
 app.listen(port, () => {
